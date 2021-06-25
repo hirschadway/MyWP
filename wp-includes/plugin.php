@@ -116,7 +116,7 @@ function add_filter( $tag, $function_to_add, $priority = 10, $accepted_args = 1 
 	if ( ! isset( $wp_filter[ $tag ] ) ) {
 		$wp_filter[ $tag ] = new WP_Hook();
 	}
-	$wp_filter[ $tag ]->add_filter( $tag, $function_to_add, $priority, $accepted_args );
+	$wp_filter[ $tag ]->add_filter( $function_to_add, $priority, $accepted_args );
 	return true;
 }
 
@@ -143,7 +143,7 @@ function has_filter( $tag, $function_to_check = false ) {
 		return false;
 	}
 
-	return $wp_filter[ $tag ]->has_filter( $tag, $function_to_check );
+	return $wp_filter[ $tag ]->has_filter( $function_to_check );
 }
 
 /**

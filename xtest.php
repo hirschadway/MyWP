@@ -1,10 +1,7 @@
 
 <?php
 
-function action()
-{
-    echo "action is loaded";
-}
-spl_autoload_register('action');
+$x=array();
+echo !$x ?'yes':'no';
 ?>
 
